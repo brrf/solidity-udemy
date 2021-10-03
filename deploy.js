@@ -15,7 +15,7 @@ async function deploy () {
     console.log(`Attempting deploy from account: ${accounts[0]}`)
 
     const result = await new eth.Contract(JSON.parse(interface))
-        .deploy({ data: bytecode, arguments: ['jello whirl'] })
+        .deploy({ data: bytecode })
         .send({ gas: '1000000', gasPrice: '5000000000', from: accounts[0] })
 
     console.log(`Contract deployed to: ${result.options.address}`);
